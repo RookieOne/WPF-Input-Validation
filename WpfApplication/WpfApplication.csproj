@@ -96,6 +96,7 @@
     <Compile Include="Domain\PartyInvitee.cs" />
     <Compile Include="Framework\ActionCommand.cs" />
     <Compile Include="Framework\ExpressionExtensions.cs" />
+    <Compile Include="Framework\RegularExpressions.cs" />
     <Compile Include="Framework\StringExtensions.cs" />
     <Compile Include="Framework\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -112,7 +113,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ShowPartyInvitees\ShowPartyInviteesViewModel.cs" />
-    <Compile Include="ValidationRules\EmailRule.cs" />
+    <Compile Include="ValidationRules\RegularExpressionRule.cs" />
     <Compile Include="ValidationRules\GreaterThanRule.cs" />
     <Compile Include="ValidationRules\RequiredRule.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
