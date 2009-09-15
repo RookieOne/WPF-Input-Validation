@@ -75,6 +75,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\TextBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -92,6 +96,7 @@
     <Compile Include="Domain\PartyInvitee.cs" />
     <Compile Include="Framework\ActionCommand.cs" />
     <Compile Include="Framework\ExpressionExtensions.cs" />
+    <Compile Include="Framework\StringExtensions.cs" />
     <Compile Include="Framework\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -108,6 +113,7 @@
     </Compile>
     <Compile Include="ShowPartyInvitees\ShowPartyInviteesViewModel.cs" />
     <Compile Include="ValidationRules\EmailRule.cs" />
+    <Compile Include="ValidationRules\GreaterThanRule.cs" />
     <Compile Include="ValidationRules\RequiredRule.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

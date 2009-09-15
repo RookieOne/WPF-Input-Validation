@@ -25,6 +25,7 @@
                      Grid.Column="1">
                 <TextBox.Text>
                     <Binding Path="Name"
+                             UpdateSourceTrigger="PropertyChanged"
                              ValidatesOnDataErrors="True">
                         <Binding.ValidationRules>
                             <ValidationRules:RequiredRule />
