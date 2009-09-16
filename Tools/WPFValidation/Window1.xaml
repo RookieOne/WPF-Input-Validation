@@ -1,0 +1,73 @@
+﻿<Window x:Class="WPFValidation.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:my="clr-namespace:Bennedik.Validation.Integration.WPF;assembly=Bennedik.Validation.Integration.WPF" 
+    Title="WPFValidation" Height="400" Width="300"
+    >
+  <Window.Resources>
+    <Style TargetType="{x:Type TextBox}">
+      <Setter Property="Validation.ErrorTemplate">
+        <Setter.Value>
+          <ControlTemplate>
+            <Border BorderBrush="Red" BorderThickness="1">
+              <AdornedElementPlaceholder />
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+      <Style.Triggers>
+        <Trigger Property="Validation.HasError" Value="true">
+          <Setter Property="ToolTip"
+            Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+          </Trigger>
+      </Style.Triggers>      
+    </Style>
+  </Window.Resources>
+  <StackPanel>
+    <Label>Hover over the textbox to see error message.</Label>
+    <my:ErrorProvider x:Name="epCustomer" RulesetName="RuleSetA">
+      <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+          <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label>First Name:</Label>
+        <TextBox Grid.Column="1" Text="{Binding Path=FirstName}"/>
+        <Label Grid.Row="1">Last Name:</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=LastName}"/>
+        <Label Grid.Row="2">Date Of Birth:</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=DateOfBirth}"/>
+        <Label Grid.Row="3">Email:</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Email}"/>
+        <Label Grid.Row="4">Rewards Points:</Label>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=RewardPoints}"/>
+        <Label Grid.Row="5">Line 1:</Label>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=Address.Line1}"/>
+        <Label Grid.Row="6">Line 2:</Label>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=Address.Line2}"/>
+        <Label Grid.Row="7">City:</Label>
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=Address.City}"/>
+        <Label Grid.Row="8">State:</Label>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=Address.State}"/>
+        <Label Grid.Row="9">Post Code:</Label>
+        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=Address.PostCode}"/>
+        <Label Grid.Row="10">Country:</Label>
+        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Path=Address.Country}"/>
+      </Grid>
+    </my:ErrorProvider>
+    <Button Click="OnSubmit">Submit</Button>
+  </StackPanel>
+</Window>

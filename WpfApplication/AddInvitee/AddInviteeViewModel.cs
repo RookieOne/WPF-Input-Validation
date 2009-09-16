@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using Microsoft.Practices.EnterpriseLibrary.Validation.Validators;
 using WpfApplication.Domain;
 using WpfApplication.Framework;
 
@@ -18,6 +19,7 @@ namespace WpfApplication.AddInvitee
             Add = new ActionCommand(OnAdd);
         }
 
+        [NotNullValidator]
         public string Name
         {
             get { return _name; }
@@ -28,6 +30,7 @@ namespace WpfApplication.AddInvitee
             }
         }
 
+        [RegexValidator(RegularExpressions.Email)]
         public string Email
         {
             get { return _email; }
@@ -38,6 +41,7 @@ namespace WpfApplication.AddInvitee
             }
         }
 
+        [RangeValidator(18, RangeBoundaryType.Inclusive, Int32.MaxValue, RangeBoundaryType.Inclusive)]
         public int Age
         {
             get { return _age; }
