@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"          
-    xmlns:AddInvitee1="clr-namespace:DataErrorInfo.AddInvitee">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                       
+    xmlns:AddInvitee="clr-namespace:EnterpriseLibraryExample.AddInvitee">
     
-    <DataTemplate DataType="{x:Type AddInvitee1:AddInviteeViewModel}">
+    <DataTemplate DataType="{x:Type AddInvitee:AddInviteeViewModel}">
     
         <Grid Margin="10">
             <Grid.RowDefinitions>

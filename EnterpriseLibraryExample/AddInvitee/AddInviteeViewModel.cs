@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using System.Windows.Input;
 using CommonLibrary.Consts;
 using CommonLibrary.Domain;
-using CommonLibrary.Extensions;
 using CommonLibrary.Wpf;
-using DataErrorInfo.Foundation;
+using Microsoft.Practices.EnterpriseLibrary.Validation.Validators;
 
-namespace DataErrorInfo.AddInvitee
+namespace EnterpriseLibraryExample.AddInvitee
 {
-    public class AddInviteeViewModel : DataErrorInfoViewModel, IAddInviteeViewModel
+    public class AddInviteeViewModel : ViewModel, IAddInviteeViewModel
     {
         private readonly IPartyInviteeRepository _repository;
         private int _age;
@@ -22,6 +20,7 @@ namespace DataErrorInfo.AddInvitee
             Add = new ActionCommand(OnAdd);
         }
 
+        [NotNullValidator]
         public string Name
         {
             get { return _name; }
@@ -32,6 +31,7 @@ namespace DataErrorInfo.AddInvitee
             }
         }
 
+        [RegexValidator(RegularExpressions.Email)]
         public string Email
         {
             get { return _email; }
@@ -42,6 +42,7 @@ namespace DataErrorInfo.AddInvitee
             }
         }
 
+        [RangeValidator(18, RangeBoundaryType.Inclusive, Int32.MaxValue, RangeBoundaryType.Inclusive)]
         public int Age
         {
             get { return _age; }
@@ -61,32 +62,6 @@ namespace DataErrorInfo.AddInvitee
             var invitee = new PartyInvitee(Name, Email, Age);
             _repository.Add(invitee);
             Close(this, null);
-        }
-
-        protected override string GetErrorFor(string columnName)
-        {
-            if (columnName == "Name")
-                if (string.IsNullOrEmpty(Name))
-                    return "Name is required";
-
-            if (columnName == "Age")
-                if (!(Age > 18))
-                {
-                    Error = "Testing";
-                    return "Age must be greater than 18";
-                }
-
-            if (columnName == "Email")
-            {
-                if (string.IsNullOrEmpty(Email))
-                    return "Email is required";
-
-                Match match = Regex.Match(Email, RegularExpressions.Email);
-                if (!match.Success)
-                    return "{0} must match {1}".FormatString(Email, RegularExpressions.Email);
-            }
-
-            return base.GetErrorFor(columnName);
         }
     }
 }

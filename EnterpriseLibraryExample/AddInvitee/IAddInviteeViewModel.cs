@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataErrorInfo.AddInvitee
+namespace EnterpriseLibraryExample.AddInvitee
 {
     public interface IAddInviteeViewModel
     {

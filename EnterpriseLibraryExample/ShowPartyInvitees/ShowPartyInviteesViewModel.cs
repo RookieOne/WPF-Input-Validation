@@ -2,9 +2,9 @@
 using System.Windows.Input;
 using CommonLibrary.Domain;
 using CommonLibrary.Wpf;
-using DataErrorInfo.AddInvitee;
+using EnterpriseLibraryExample.AddInvitee;
 
-namespace DataErrorInfo.ShowPartyInvitees
+namespace EnterpriseLibraryExample.ShowPartyInvitees
 {
     public class ShowPartyInviteesViewModel : ViewModel
     {
