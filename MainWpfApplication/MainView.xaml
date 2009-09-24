@@ -1,0 +1,13 @@
+﻿<Window x:Class="MainWpfApplication.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Wpf Input Validation" Height="300" Width="300">
+    <StackPanel Margin="35">
+        
+        <Button Content="Validation Rules"
+                Command="{Binding ShowValidationRulesExample}" />
+        <Button Content="Exceptions"
+                Command="{Binding ShowExceptionExample}" />
+        
+    </StackPanel>
+</Window>
