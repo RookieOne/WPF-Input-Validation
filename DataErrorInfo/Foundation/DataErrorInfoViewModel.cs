@@ -1,8 +1,9 @@
-﻿using CommonLibrary.Wpf;
+﻿using System.ComponentModel;
+using CommonLibrary.Wpf;
 
 namespace DataErrorInfo.Foundation
 {
-    public class DataErrorInfoViewModel : ViewModel
+    public class DataErrorInfoViewModel : ViewModel, IDataErrorInfo
     {
         private string _error;
 

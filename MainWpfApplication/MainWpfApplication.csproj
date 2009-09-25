@@ -45,9 +45,18 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -57,6 +66,10 @@
     <Page Include="MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -97,9 +110,25 @@
       <Project>{C9B59143-B653-4F46-866A-20BC9D11D50A}</Project>
       <Name>CommonLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CustomMarkupExtension\CustomMarkupExtension.csproj">
+      <Project>{C5A8D41F-4CEC-4458-986B-C569689DA142}</Project>
+      <Name>CustomMarkupExtension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataErrorInfo\DataErrorInfo.csproj">
+      <Project>{F5A01A86-F2E6-492A-8299-B5A714F36299}</Project>
+      <Name>DataErrorInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EnterpriseLibraryExample\EnterpriseLibraryExample.csproj">
+      <Project>{0082CAA6-22BB-4442-8CA1-E7B979E5DBC5}</Project>
+      <Name>EnterpriseLibraryExample</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exceptions\Exceptions.csproj">
       <Project>{0B22B42E-8333-4230-9D3C-DC9DEDDC1D38}</Project>
       <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Validation.Integration.WPF\Validation.Integration.WPF.csproj">
+      <Project>{78C13DB8-CD91-4C76-A977-6A521DD1A474}</Project>
+      <Name>Validation.Integration.WPF</Name>
     </ProjectReference>
     <ProjectReference Include="..\ValidationRules\ValidationRules.csproj">
       <Project>{696D9592-E28E-4571-B8DB-A8F36064F11E}</Project>

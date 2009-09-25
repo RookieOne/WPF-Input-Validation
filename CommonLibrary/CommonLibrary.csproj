@@ -54,6 +54,7 @@
     <Compile Include="Domain\InMemoryPartyInviteeRepository.cs" />
     <Compile Include="Domain\IPartyInviteeRepository.cs" />
     <Compile Include="Domain\PartyInvitee.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\ExpressionExtensions.cs" />
     <Compile Include="Extensions\Show.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

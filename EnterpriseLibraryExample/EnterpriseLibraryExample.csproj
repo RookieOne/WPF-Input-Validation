@@ -99,6 +99,10 @@
       <Project>{C9B59143-B653-4F46-866A-20BC9D11D50A}</Project>
       <Name>CommonLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tools\Validation.Integration.WPF\Validation.Integration.WPF.csproj">
+      <Project>{78C13DB8-CD91-4C76-A977-6A521DD1A474}</Project>
+      <Name>Validation.Integration.WPF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

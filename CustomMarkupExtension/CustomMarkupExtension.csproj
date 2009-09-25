@@ -61,7 +61,12 @@
   <ItemGroup>
     <Compile Include="AddInvitee\AddInviteeViewModel.cs" />
     <Compile Include="AddInvitee\IAddInviteeViewModel.cs" />
-    <Compile Include="MarkupExtensions\CustomBindingExtension.cs" />
+    <Compile Include="MarkupExtensions\BindingDecoratorBase.cs" />
+    <Compile Include="MarkupExtensions\GreaterThan.cs" />
+    <Compile Include="MarkupExtensions\Email.cs" />
+    <Compile Include="MarkupExtensions\MyCustomMarkupExtension.cs" />
+    <Compile Include="MarkupExtensions\Required.cs" />
+    <Compile Include="MarkupExtensions\ValidationBinding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,10 +81,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ShowPartyInvitees\ShowPartyInviteesViewModel.cs" />
+    <Compile Include="ValidationRules\GreaterThanRule.cs" />
+    <Compile Include="ValidationRules\RegularExpressionRule.cs" />
+    <Compile Include="ValidationRules\RequiredRule.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

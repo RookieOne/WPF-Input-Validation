@@ -70,7 +70,19 @@ namespace Bennedik.Validation.Integration.WPF
         {
             ValidationIntegrationHelper helper = new ValidationIntegrationHelper(this);
 
-            return helper.GetValue(out value, out valueAccessFailureMessage);
+            bool result;
+            try
+            {
+                result = helper.GetValue(out value, out valueAccessFailureMessage);
+            }
+            catch
+            {
+                result = false;
+                value = null;
+                valueAccessFailureMessage = String.Empty;
+            }
+            
+            return result;
         }
 
         private string sourceTypeName;

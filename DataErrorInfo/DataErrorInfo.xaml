@@ -3,6 +3,7 @@
     
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="AddInvitee/AddInviteeView.xaml" />
+        <ResourceDictionary Source="BetterAddInvitee/BetterAddInviteeView.xaml" />
         <ResourceDictionary Source="ShowPartyInvitees/ShowPartyInviteesView.xaml" />
     </ResourceDictionary.MergedDictionaries>
     

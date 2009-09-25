@@ -8,6 +8,12 @@
                 Command="{Binding ShowValidationRulesExample}" />
         <Button Content="Exceptions"
                 Command="{Binding ShowExceptionExample}" />
+        <Button Content="Data Error Info"
+                Command="{Binding ShowDataErrorInfoExample}" />
+        <Button Content="Enterprise Library"
+                Command="{Binding ShowEnterpriseLibraryExample}" />
+        <Button Content="Custom Markup Extension"
+                Command="{Binding ShowCustomMarkupExtensionExample}" />
         
     </StackPanel>
 </Window>

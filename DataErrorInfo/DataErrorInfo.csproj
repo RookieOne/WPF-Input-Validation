@@ -52,6 +52,8 @@
   <ItemGroup>
     <Compile Include="AddInvitee\AddInviteeViewModel.cs" />
     <Compile Include="AddInvitee\IAddInviteeViewModel.cs" />
+    <Compile Include="BetterAddInvitee\BetterAddInviteeViewModel.cs" />
+    <Compile Include="BetterAddInvitee\IBetterAddInviteeViewModel.cs" />
     <Compile Include="Foundation\DataErrorInfoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -79,6 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="AddInvitee\AddInviteeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BetterAddInvitee\BetterAddInviteeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

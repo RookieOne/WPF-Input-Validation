@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Data;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
+using CommonLibrary.Consts;
 using CommonLibrary.Domain;
 using CommonLibrary.Wpf;
 
@@ -23,6 +26,9 @@ namespace Exceptions.AddInvitee
             get { return _name; }
             set
             {
+                if (String.IsNullOrEmpty(value))
+                    throw new Exception("Name is required");
+
                 _name = value;
                 OnPropertyChanged(this, v => v.Name);
             }
@@ -33,6 +39,9 @@ namespace Exceptions.AddInvitee
             get { return _email; }
             set
             {
+                if (!Regex.Match(value, RegularExpressions.Email).Success)
+                    throw new Exception("Email is in incorrect format");
+
                 _email = value;
                 OnPropertyChanged(this, v => v.Email);
             }
@@ -43,9 +52,10 @@ namespace Exceptions.AddInvitee
             get { return _age; }
             set
             {
-                _age = value;
-                if (_age < 18)
+                if (value < 18)
                     throw new Exception("Age must be greater than 18");
+
+                _age = value;
                 OnPropertyChanged(this, v => v.Age);
             }
         }

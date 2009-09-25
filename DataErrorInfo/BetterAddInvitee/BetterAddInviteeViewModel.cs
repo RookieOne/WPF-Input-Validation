@@ -7,16 +7,16 @@ using CommonLibrary.Extensions;
 using CommonLibrary.Wpf;
 using DataErrorInfo.Foundation;
 
-namespace DataErrorInfo.AddInvitee
+namespace DataErrorInfo.BetterAddInvitee
 {
-    public class AddInviteeViewModel : DataErrorInfoViewModel, IAddInviteeViewModel
+    public class BetterAddInviteeViewModel : DataErrorInfoViewModel, IBetterAddInviteeViewModel
     {
         private readonly IPartyInviteeRepository _repository;
-        private int _age;
+        private string _age;
         private string _email;
         private string _name;
 
-        public AddInviteeViewModel(IPartyInviteeRepository repository)
+        public BetterAddInviteeViewModel(IPartyInviteeRepository repository)
         {
             _repository = repository;
             Add = new ActionCommand(OnAdd);
@@ -42,7 +42,7 @@ namespace DataErrorInfo.AddInvitee
             }
         }
 
-        public int Age
+        public string Age
         {
             get { return _age; }
             set
@@ -58,7 +58,7 @@ namespace DataErrorInfo.AddInvitee
 
         private void OnAdd()
         {
-            var invitee = new PartyInvitee(Name, Email, Age);
+            var invitee = new PartyInvitee(Name, Email, Int32.Parse(Age));
             _repository.Add(invitee);
             Close(this, null);
         }
@@ -70,10 +70,16 @@ namespace DataErrorInfo.AddInvitee
                     return "Name is required";
 
             if (columnName == "Age")
-                if (!(Age > 18))
-                {
+            {
+                int age;
+                if (!Int32.TryParse(Age, out age))
+                    return "Age must be a number";
+
+                if (!(age > 18))
+                {                    
                     return "Age must be greater than 18";
                 }
+            }                
 
             if (columnName == "Email")
             {

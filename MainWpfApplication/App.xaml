@@ -7,12 +7,23 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 
+                <ResourceDictionary Source="Styles.xaml" />
+                
                 <!-- Validation Rules-->
                 <ResourceDictionary Source="pack://application:,,,/ValidationRules;component/ValidationRules.xaml" />                
                 
                 <!-- Exceptions -->
                 <ResourceDictionary Source="pack://application:,,,/Exceptions;component/Exceptions.xaml" />
             
+                <!-- Data Error Info -->
+                <ResourceDictionary Source="pack://application:,,,/DataErrorInfo;component/DataErrorInfo.xaml" />
+                
+                <!-- Enterprise Library -->
+                <ResourceDictionary Source="pack://application:,,,/EnterpriseLibraryExample;component/EnterpriseLibrary.xaml" />
+                
+                <!-- Custom Markup Extension -->
+                <ResourceDictionary Source="pack://application:,,,/CustomMarkupExtension;component/CustomMarkupExtension.xaml" />
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         

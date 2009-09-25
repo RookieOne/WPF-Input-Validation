@@ -62,7 +62,8 @@
                              UpdateSourceTrigger="PropertyChanged"
                              ValidatesOnDataErrors="True">
                         <Binding.ValidationRules>
-                            <ValidationRules:RegularExpressionRule Regex="{x:Static Consts:RegularExpressions.Email}" />
+                            <ValidationRules:RegularExpressionRule 
+                                Regex="{x:Static Consts:RegularExpressions.Email}" />
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>

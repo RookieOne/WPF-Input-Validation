@@ -3,6 +3,7 @@ using System.Windows.Input;
 using CommonLibrary.Domain;
 using CommonLibrary.Wpf;
 using DataErrorInfo.AddInvitee;
+using DataErrorInfo.BetterAddInvitee;
 
 namespace DataErrorInfo.ShowPartyInvitees
 {
@@ -10,12 +11,14 @@ namespace DataErrorInfo.ShowPartyInvitees
     {
         private readonly IPartyInviteeRepository _repository;
         private IAddInviteeViewModel _addInviteeViewModel;
+        private IBetterAddInviteeViewModel _betterAddInviteeViewModel;
         private IEnumerable<PartyInvitee> _partyInvitees;
 
         public ShowPartyInviteesViewModel(IPartyInviteeRepository repository)
         {
             _repository = repository;
             Add = new ActionCommand(OnAdd);
+            BetterAdd = new ActionCommand(OnBetterAdd);
             RefreshList();
         }
 
@@ -30,6 +33,7 @@ namespace DataErrorInfo.ShowPartyInvitees
         }
 
         public ICommand Add { get; set; }
+        public ICommand BetterAdd { get; set; }
 
         public IAddInviteeViewModel AddInviteeViewModel
         {
@@ -41,12 +45,32 @@ namespace DataErrorInfo.ShowPartyInvitees
             }
         }
 
+        public IBetterAddInviteeViewModel BetterAddInviteeViewModel
+        {
+            get { return _betterAddInviteeViewModel; }
+            set
+            {
+                _betterAddInviteeViewModel = value;
+                OnPropertyChanged(this, v => v.BetterAddInviteeViewModel);
+            }
+        }
+
         private void OnAdd()
         {
             AddInviteeViewModel = new AddInviteeViewModel(_repository);
             AddInviteeViewModel.Close += (sender, e) =>
                                              {
                                                  AddInviteeViewModel = null;
+                                                 RefreshList();
+                                             };
+        }
+
+        private void OnBetterAdd()
+        {
+            BetterAddInviteeViewModel = new BetterAddInviteeViewModel(_repository);
+            BetterAddInviteeViewModel.Close += (sender, e) =>
+                                             {
+                                                 BetterAddInviteeViewModel = null;
                                                  RefreshList();
                                              };
         }
