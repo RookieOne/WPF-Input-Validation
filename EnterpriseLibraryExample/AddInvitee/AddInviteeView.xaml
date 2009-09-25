@@ -6,48 +6,48 @@
     <DataTemplate DataType="{x:Type AddInvitee:AddInviteeViewModel}">
         <Grid>
             <WPF:ErrorProvider>
-        <Grid Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            
-            <TextBlock Grid.Row="0" 
-                       Grid.Column="0" 
-                       Text="Name" />
-            <TextBox Grid.Row="0"
-                     Grid.Column="1"
-                     Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.Row="0" 
+                               Grid.Column="0" 
+                               Text="Name" />
+                    <TextBox Grid.Row="0"
+                             Grid.Column="1"
+                             Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
 
-            <TextBlock Grid.Row="1" 
-                       Grid.Column="0"
-                       Text="Age">
-            </TextBlock>
-            <TextBox Grid.Row="1"
-                     Grid.Column="1"
-                     Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Grid.Row="1" 
+                               Grid.Column="0"
+                               Text="Age">
+                    </TextBlock>
+                    <TextBox Grid.Row="1"
+                             Grid.Column="1"
+                             Text="{Binding Age, UpdateSourceTrigger=PropertyChanged}" />
 
-            <TextBlock Grid.Row="2" 
-                       Grid.Column="0" 
-                       Text="Email" />
-            <TextBox Grid.Row="2"
-                     Grid.Column="1"
-                     Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Grid.Row="2" 
+                               Grid.Column="0" 
+                               Text="Email" />
+                    <TextBox Grid.Row="2"
+                             Grid.Column="1"
+                             Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Button Grid.Row="3" 
-                    Grid.Column="1"
-                    Content="Add" 
-                    Command="{Binding Add}" />
+                    <Button Grid.Row="3" 
+                            Grid.Column="1"
+                            Content="Add" 
+                            Command="{Binding Add}" />
 
-        </Grid>
-        </WPF:ErrorProvider>
+                </Grid>
+            </WPF:ErrorProvider>
         </Grid>
     </DataTemplate>
     

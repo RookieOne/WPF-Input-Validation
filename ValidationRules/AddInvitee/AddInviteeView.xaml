@@ -40,7 +40,8 @@
                        Text="Age">
             </TextBlock>
             <TextBox Grid.Row="1"
-                     Grid.Column="1">
+                     Grid.Column="1"
+                     ToolTip="Age Tooltip">
                 <TextBox.Text>
                     <Binding Path="Age"
                              UpdateSourceTrigger="PropertyChanged"

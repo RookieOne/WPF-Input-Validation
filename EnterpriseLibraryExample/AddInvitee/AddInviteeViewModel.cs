@@ -31,7 +31,8 @@ namespace EnterpriseLibraryExample.AddInvitee
             }
         }
 
-        [RegexValidator(RegularExpressions.Email)]
+        [RegexValidator(RegularExpressions.Email, 
+            MessageTemplate = "Email must be in the correct format")]
         public string Email
         {
             get { return _email; }
@@ -42,7 +43,8 @@ namespace EnterpriseLibraryExample.AddInvitee
             }
         }
 
-        [RangeValidator(18, RangeBoundaryType.Inclusive, Int32.MaxValue, RangeBoundaryType.Inclusive)]
+        [RangeValidator(18, RangeBoundaryType.Inclusive, Int32.MaxValue, RangeBoundaryType.Inclusive,
+            MessageTemplate = "Age must be greater than 18")]
         public int Age
         {
             get { return _age; }
